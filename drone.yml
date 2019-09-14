@@ -1,0 +1,23 @@
+---
+kind: pipeline
+name: NusantaraDevs
+
+platform:
+  os: linux
+  arch: amd64
+
+clone:
+  depth: 1
+
+steps:
+  - name: build
+    image: najahi/oven:dev
+    environment:
+      token:
+        from_secret: GH_TOKEN
+    commands:
+      - bash build-nusantara-tc.sh
+    when:
+      event:
+        exclude:
+          - tag
