@@ -411,7 +411,7 @@ def fetch_llvm_binutils(root_folder, update, ref):
     else:
         utils.print_header("Downloading LLVM")
         subprocess.run([
-            "git", "clone", "-b", ref, "git://github.com/llvm/llvm-project",
+            "git", "clone", "-b", ref, "https://github.com/llvm/llvm-project",
             p.as_posix()
         ],
                        check=True)
@@ -524,6 +524,8 @@ def base_cmake_defines(dirs):
         'LLVM_INCLUDE_DOCS': 'OFF',
         # Don't include example build targets to save on cmake cycles
         'LLVM_INCLUDE_EXAMPLES': 'OFF',
+        # Include clang repository string
+        'CLANG_REPOSITORY_STRING': 'https://github.com/llvm/llvm-project',
 
     }
     # yapf: enable
