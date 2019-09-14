@@ -16,6 +16,12 @@ steps:
       token:
         from_secret: GH_TOKEN
     commands:
+      - git config --global user.email "najahiii@outlook.co.id"
+      - git config --global user.name "Ahmad Thoriq Najahi"
+      - git clone https://github.com/llvm/llvm-project.git llvm-project
+      - cd llvm-project
+      - curl https://github.com/NusantaraDevs/llvm-project/commit/9c34ac1bf04d687c684aee4ce4ba3640e0ca9a23.patch | git am
+      - cd ..
       - bash build-nusantara-tc.sh
     when:
       event:
