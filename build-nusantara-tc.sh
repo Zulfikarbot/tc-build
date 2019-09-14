@@ -42,14 +42,17 @@ done
 git config --global user.email "najahiii@outlook.co.id"
 git config --global user.name "Ahmad Thoriq Najahi"
 
+# Grab some commits history by using some hack
+git clone https://github.com/NusantaraDevs/clang.git -b dev/10.0 clang
+cp -r clang/.git install/
+
 # Push eeet
 msg "Pushing compiled toolchains to Github..."
 chmod -R 777 install
 cd install
-git init
-git checkout -b dev/10.0
 rm .gitignore
 git add . -f
 git commit -m "[$(date +'%d%m%Y')]: NusantaraDevs LLVM Clang 10.0.0" --signoff
+git remote rm origin
 git remote add origin https://najahiiii:$token@github.com/NusantaraDevs/clang.git
-git push --force origin dev/10.0
+git push origin dev/10.0
