@@ -48,7 +48,8 @@ chmod -R 777 install
 cd install
 git init
 git checkout -b dev/10.0
+rm .gitignore
 git add . -f
-git commit -m "[$(date +'%d%m%y')]: NusantaraDevs LLVM Clang 10.0.0" --signoff
+git commit -m "[$(date +'%d%m%Y')]: NusantaraDevs LLVM Clang 10.0.0" --signoff
 git remote add origin https://najahiiii:$token@github.com/NusantaraDevs/clang.git
 git push --force origin dev/10.0
