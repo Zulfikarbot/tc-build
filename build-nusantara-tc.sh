@@ -20,6 +20,7 @@ msg "Building LLVM..."
 	--clang-vendor "NusantaraDevs" \
 	--projects "clang;compiler-rt;lld;polly" \
 	--pgo \
+	--no-update \
 	"${llvm_args[@]}"
 
 # Build binutils
