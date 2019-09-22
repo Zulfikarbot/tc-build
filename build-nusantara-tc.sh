@@ -11,8 +11,8 @@ function msg() {
 
 # Configure LLVM build based on environment or arguments
 msg "Configuring reduced LLVM build for CI..."
-llvm_args=(--targets "ARM;AArch64")
-binutils_args=(--targets arm aarch64)
+llvm_args=(--targets "X86;ARM;AArch64")
+binutils_args=(--targets arm aarch64 x86_64)
 
 # Build LLVM
 msg "Building LLVM..."
