@@ -18,7 +18,7 @@ binutils_args=(--targets arm aarch64 x86_64)
 msg "Building LLVM..."
 ./build-llvm.py \
 	--clang-vendor "NusantaraDevs" \
-	--projects "clang;compiler-rt;lld;polly" \
+	--projects "clang;compiler-rt;lld;libcxx;libcxxabi;polly" \
 	--pgo \
 	--no-update \
 	"${llvm_args[@]}"
